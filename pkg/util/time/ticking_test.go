@@ -21,4 +21,12 @@ func TestGetElapsedTime(t *testing.T) {
 			t.Errorf("ERROR: duration is expected to be equal with hour arg")
 		}
 	})
+
+	t.Run("should return remaining time in the format of hh:mm:ss", func(t *testing.T) {
+		got := tc.GetElapsedTime(1)
+		want := "00:59:57"
+		if got != want {
+			t.Errorf("Got %s, want %s", got, want)
+		}
+	})
 }
