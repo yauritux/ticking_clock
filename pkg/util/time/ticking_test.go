@@ -29,4 +29,12 @@ func TestGetElapsedTime(t *testing.T) {
 			t.Errorf("Got %s, want %s", got, want)
 		}
 	})
+
+	t.Run("4 seconds has passed after 4 times call", func(t *testing.T) {
+		got := tc.GetElapsedTime(1)
+		want := "00:59:56"
+		if got != want {
+			t.Errorf("Got %s, want %s", got, want)
+		}
+	})
 }
