@@ -14,4 +14,11 @@ func TestGetElapsedTime(t *testing.T) {
 			t.Errorf("ERROR: tc struct should be initialized to true after first call")
 		}
 	})
+
+	t.Run("provided hour should be recorded in struct duration", func(t *testing.T) {
+		tc.GetElapsedTime(1)
+		if tc.duration != 1 {
+			t.Errorf("ERROR: duration is expected to be equal with hour arg")
+		}
+	})
 }
